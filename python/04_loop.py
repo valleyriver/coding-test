@@ -48,6 +48,21 @@ while x < len(number):
         print(f'{number[x]}은(는) 홀수입니다.')
     x += 1
 
+print()
+ 
+# 4) enumerate: 인덱스와 값을 한 번에 받기
+# range(len()) 보다 짧고 읽기 쉬움. 시작 번호는 enumerate(number, 1) 처럼 지정 가능
+for idx, n in enumerate(number):
+    if n % 2 == 1:
+        print(f'{idx}번째 원소 {n}은(는) 홀수입니다.')
+ 
+print()
+ 
+# 5) 리스트 컴프리헨션: 조건에 맞는 값만 모아 새 리스트 만들기
+# n % 2 는 1이면 True, 0이면 False -> == 1 생략 가능
+odds = [n for n in number if n % 2]
+print(odds)
+ 
 # TODO 다음 복습
-# - enumerate() 로 인덱스+값 동시에 받기
-# - 리스트 컴프리헨션 [n for n in number if n % 2]
+# - zip() 으로 여러 리스트 동시에 순회
+# - sorted(key=...) 로 정렬 기준 지정 2]
