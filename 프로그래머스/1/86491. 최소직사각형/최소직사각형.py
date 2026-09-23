@@ -1,12 +1,8 @@
 def solution(sizes):
-    long_sides = []
-    short_sides = []
+    max_long = 0
+    max_short = 0
     for w, h in sizes:
-        if w > h:
-            long_sides.append(w)
-            short_sides.append(h)
-        else:
-            long_sides.append(h)
-            short_sides.append(w)
-    answer = max(long_sides) * max(short_sides)
+        max_long = max(max_long, max(w, h))
+        max_short = max(max_short, min(w, h))
+    answer = max_long * max_short
     return answer
